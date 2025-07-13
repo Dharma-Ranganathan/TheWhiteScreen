@@ -1,0 +1,46 @@
+.header-container {
+  /* border: 1px solid; */
+  padding: 0.5rem;
+
+  display: flex;
+  align-items: center;
+
+  .logo-container {
+    /* border: 1px solid; */
+    padding: 0.5rem;
+    cursor: pointer;
+
+    h3 {
+      font-size: 2rem;
+      font-family: var(--cinzel);
+      letter-spacing: 0.1rem;
+      color: var(--b-gray);
+    }
+  }
+
+  .switch-mode-container {
+    /* border: 1px solid; */
+    margin-left: auto;
+    margin-right: 1rem;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-size: 3rem;
+      line-height: 1rem;
+      color: var(--b-gray);
+    }
+  }
+}
+
+/* width will be 560px  */
+
+@media screen and (width>=35rem) {
+  .header-container {
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,20 @@
+.menu-container {
+  /* border: 1px solid; */
+  position: fixed;
+  z-index: 10;
+  background: var(--w-gray);
+  padding: 0.5rem;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+}
+
+/* width will be 560px  */
+
+@media screen and (width>=35rem) {
+  .menu-container {
+    /* border: 1px solid; */
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+}
