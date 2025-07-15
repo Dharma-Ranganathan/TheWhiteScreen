@@ -5,8 +5,10 @@ import SwitchMode from "./SwitchMode";
 const Header = () => {
   return (
     <div className="header-container">
-      <Logo />
-      <SwitchMode />
+      <div className="header-wrapper">
+        <Logo />
+        <SwitchMode />
+      </div>
     </div>
   );
 };

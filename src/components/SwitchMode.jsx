@@ -1,10 +1,10 @@
-import { WiMoonAltThirdQuarter } from "react-icons/wi";
+import { MdDarkMode } from "react-icons/md";
 
 const SwitchMode = () => {
   return (
     <div className="switch-mode-container">
       <span>
-        <WiMoonAltThirdQuarter />
+        <MdDarkMode />
       </span>
     </div>
   );

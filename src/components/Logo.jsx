@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Logo = () => {
   return (
     <div className="logo-container">
-      <h3>The White Screen</h3>
+      <Link to={"/"}>
+        <h3>The White Screen</h3>
+      </Link>
     </div>
   );
 };
