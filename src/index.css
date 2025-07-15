@@ -16,11 +16,11 @@ html {
 
   --w-gray: #f3f3f3;
   --white: #fff;
-  --b-gray: #222;
+  --b-gray: #444;
   --black: #000;
   --rating: gold;
   --views: #00f;
-  --budget: #0f0;
+  --release: green;
   --favourite: #f00;
 
   /* font family  */
@@ -28,4 +28,8 @@ html {
   --poppins: "Poppins", "sans-serif";
   --cinzel: "Cinzel Decorative", serif;
   --niconne: "Niconne", cursive;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }

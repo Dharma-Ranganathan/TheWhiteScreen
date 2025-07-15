@@ -1,0 +1,117 @@
+.card {
+  /* border: 1px solid; */
+  flex: 1 0 25rem;
+  padding: 0.5rem;
+  border: 0.2rem solid var(--w-gray);
+  user-select: none;
+
+  .poster {
+    /* border: 1px solid; */
+    width: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .movie-title {
+    /* border: 1px solid; */
+    width: 100%;
+    padding: 0.5rem;
+
+    h4 {
+      font-size: 2rem;
+      font-family: var(--niconne);
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  .overview {
+    /* border: 1px solid; */
+    width: 100%;
+    padding: 0.5rem;
+
+    p {
+      font-size: 1.3rem;
+      letter-spacing: 0.1rem;
+      color: var(--b-gray);
+      font-family: var(--poppins);
+    }
+  }
+
+  .cred-container {
+    /* border: 1px solid; */
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+
+    .creds {
+      /* border: 1px solid; */
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .rating {
+        /* border: 1px solid; */
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .rating-icon {
+          display: block;
+
+          svg {
+            font-size: 2rem;
+            color: var(--rating);
+          }
+        }
+
+        p {
+          color: var(--b-gray);
+          font-size: 1.3rem;
+          font-family: var(--poppins);
+        }
+      }
+
+      .middot {
+        font-size: 2rem;
+        color: var(--b-gray);
+      }
+
+      .views {
+        /* border: 1px solid; */
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .view-icon {
+          display: block;
+
+          svg {
+            font-size: 2rem;
+            color: var(--views);
+          }
+        }
+
+        p {
+          color: var(--b-gray);
+          font-size: 1.3rem;
+          font-family: var(--poppins);
+        }
+      }
+    }
+
+    .favourite-icon {
+      /* border: 1px solid; */
+      margin-left: auto;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+
+      svg {
+        font-size: 3rem;
+        color: var(--favourite);
+      }
+    }
+  }
+}
