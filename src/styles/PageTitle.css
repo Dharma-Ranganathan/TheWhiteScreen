@@ -1,0 +1,10 @@
+.page-title {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 1rem;
+  /* border: 1px solid; */
+  font-size: 3rem;
+  font-family: var(--niconne);
+  letter-spacing: 0.2rem;
+  color: var(--b-gray);
+}
