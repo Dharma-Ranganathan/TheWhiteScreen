@@ -6,7 +6,7 @@ import SignIn from "./pages/SignIn";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import Header from "./components/Header";
-import MenuBar from "./components/MenuBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
             <Route path="/favourites" element={<Favourites />} />
             <Route path="/*" element={<PageNotFound />} />
           </Routes>
-          <MenuBar />
+          <Footer />
         </BrowserRouter>
       </div>
     </>

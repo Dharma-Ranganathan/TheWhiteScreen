@@ -1,0 +1,15 @@
+.footer {
+  /* border: 1px solid; */
+  max-width: 100rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+
+  .footer-text {
+    font-size: 1.3rem;
+    color: var(--b-gray);
+    font-family: var(--poppins);
+    letter-spacing: 0.1rem;
+  }
+}

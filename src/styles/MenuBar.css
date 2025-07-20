@@ -36,21 +36,5 @@
         }
       }
     }
-
-    .favourites {
-      /* border: 1px solid; */
-      padding: 0.5rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-
-      .fav-icon {
-        display: block;
-        color: var(--favourite);
-        font-size: 2.5rem;
-      }
-    }
   }
 }

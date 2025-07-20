@@ -1,5 +1,4 @@
 import "../styles/MenuBar.css";
-import Favourites from "./Favourites";
 import SearchBar from "./SearchBar";
 
 const MenuBar = () => {
@@ -7,7 +6,6 @@ const MenuBar = () => {
     <div className="menu-container">
       <div className="menu-wrapper">
         <SearchBar />
-        <Favourites />
       </div>
     </div>
   );

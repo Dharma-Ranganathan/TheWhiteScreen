@@ -9,7 +9,7 @@ const Home = () => {
   const { data, isLoading } = useMoviesFromApi();
 
   const pages = data?.pages?.map((page, index) => {
-    return <CardContainer key={index} page={page} />;
+    return <CardContainer key={index} page={page} isFavourite={false} />;
   });
 
   if (isLoading) {

@@ -21,6 +21,9 @@ export const useMoviesFromApi = () => {
     queryFn: getMoviesFromApi,
     initialPageParam: INITIAL_PATH,
     getNextPageParam: (lastPage) => {
+      if (lastPage.next_page_url == null) {
+        return undefined;
+      }
       // console.log({ lastPage, allPages, lastPageParam });
       return lastPage.next_page_url;
     },

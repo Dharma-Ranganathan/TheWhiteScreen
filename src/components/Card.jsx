@@ -4,13 +4,22 @@ import { GrView } from "react-icons/gr";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import { useState } from "react";
+import { useFirestoreCustomFunctions } from "../hooks/useFirestoreCustomFunctions";
 
 const Card = ({ movie }) => {
-  // console.log(movie);
+  // console.log(movie.id);
+
   const [toggleHeart, setToggleHeart] = useState(false);
 
-  function handleFavourite() {
-    setToggleHeart(!toggleHeart);
+  const { addToFavourite } = useFirestoreCustomFunctions();
+
+  function handleFavourite(movieId) {
+    if (movie.id == movieId) {
+      setToggleHeart(true);
+      //firestore logic to add favourite movie
+      addToFavourite(movie);
+      return;
+    }
   }
 
   return (
@@ -18,9 +27,9 @@ const Card = ({ movie }) => {
       <div className="poster">
         <img
           src={
-            movie.poster_path
-              ? movie.poster_path
-              : "/placeholderMoviePoster.png"
+            movie.poster_path == "https://image.tmdb.org/t/p/original"
+              ? "/placeholderMoviePoster.png"
+              : movie.poster_path
           }
           alt="Movie-Poster"
         />
@@ -47,8 +56,12 @@ const Card = ({ movie }) => {
             <p>{movie.vote_count}</p>
           </div>
         </div>
-        <div className="favourite-icon" onClick={handleFavourite}>
-          {!toggleHeart ? <FaRegHeart /> : <FaHeart />}
+        <div className="favourite-icon">
+          {!toggleHeart ? (
+            <FaRegHeart onClick={() => handleFavourite(movie.id)} />
+          ) : (
+            <FaHeart />
+          )}
         </div>
       </div>
     </div>
