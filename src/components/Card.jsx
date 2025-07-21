@@ -3,15 +3,22 @@ import { FaStar } from "react-icons/fa";
 import { GrView } from "react-icons/gr";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
+import { FaTrash } from "react-icons/fa";
+import { MdLocalMovies } from "react-icons/md";
 import { useState } from "react";
 import { useFirestoreCustomFunctions } from "../hooks/useFirestoreCustomFunctions";
+import { deleteDoc, doc } from "firebase/firestore";
+import { fdb } from "../config/firebaseConfig";
+import { useNavigate } from "react-router-dom";
 
-const Card = ({ movie }) => {
+const Card = ({ movie, isFavourite }) => {
   // console.log(movie.id);
 
   const [toggleHeart, setToggleHeart] = useState(false);
 
   const { addToFavourite } = useFirestoreCustomFunctions();
+
+  const navigate = useNavigate();
 
   function handleFavourite(movieId) {
     if (movie.id == movieId) {
@@ -20,6 +27,11 @@ const Card = ({ movie }) => {
       addToFavourite(movie);
       return;
     }
+  }
+
+  async function removeFavourite(movieDocId) {
+    await deleteDoc(doc(fdb, "favourites", movieDocId));
+    return navigate("/");
   }
 
   return (
@@ -57,7 +69,19 @@ const Card = ({ movie }) => {
           </div>
         </div>
         <div className="favourite-icon">
-          {!toggleHeart ? (
+          {isFavourite ? (
+            <>
+              <button className="viewMovie">
+                <MdLocalMovies />
+              </button>
+              <button
+                className="removeFavourite"
+                onClick={() => removeFavourite(movie?.docId)}
+              >
+                <FaTrash />
+              </button>
+            </>
+          ) : !toggleHeart ? (
             <FaRegHeart onClick={() => handleFavourite(movie.id)} />
           ) : (
             <FaHeart />

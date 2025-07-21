@@ -1,0 +1,220 @@
+.movie-modal {
+  position: fixed;
+  transition: 0.3s;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal-wrapper {
+    border: 0.2rem solid var(--w-gray);
+    transition: 0.3s;
+    overflow-y: scroll;
+    height: 55rem;
+    width: 80%;
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+
+    @media screen and (width<=50rem) {
+      & {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+      }
+    }
+
+    .left-image-modal {
+      /* border: 1px solid black; */
+      padding: 1rem;
+      flex: 1 0 30rem;
+      height: 100%;
+      overflow: hidden;
+
+      @media screen and (width<=50rem) {
+        & {
+          /* border: 1px solid red; */
+          width: 100%;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .right-movie-modal {
+      /* border: 1px solid white; */
+      padding: 1rem;
+      flex: 1 0;
+      min-width: 50%;
+
+      @media screen and (width<=50rem) {
+        & {
+          /* border: 1px solid red; */
+          width: 100%;
+        }
+      }
+
+      .description {
+        /* border: 1px solid; */
+        width: 100%;
+
+        @media screen and (width<=50rem) {
+          & {
+            /* border: 1px solid red; */
+            width: 100%;
+          }
+        }
+
+        p {
+          text-align: justify;
+          font-size: 1.3rem;
+          color: var(--w-gray);
+          font-family: var(--poppins);
+        }
+      }
+
+      .title {
+        /* border: 1px solid white; */
+        width: 100%;
+
+        h3 {
+          font-size: 3rem;
+          letter-spacing: 0.2rem;
+          margin: 0.5rem 0;
+          color: var(--w-gray);
+          font-family: var(--niconne);
+        }
+      }
+
+      .creds {
+        /* border: 1px solid white; */
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .rating {
+          padding: 0.5rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          svg {
+            fill: var(--rating);
+            font-size: 1.5rem;
+          }
+          span {
+            font-size: 1.5rem;
+            color: var(--w-gray);
+            line-height: 1rem;
+            font-family: var(--poppins);
+          }
+        }
+
+        .views {
+          padding: 0.5rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          svg {
+            fill: var(--views);
+            font-size: 1.5rem;
+          }
+          span {
+            font-size: 1.5rem;
+            color: var(--w-gray);
+            font-family: var(--poppins);
+            line-height: 1rem;
+          }
+        }
+
+        .release {
+          padding: 0.5rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          svg {
+            fill: var(--favourite);
+            font-size: 1.5rem;
+          }
+          span {
+            font-size: 1.5rem;
+            color: var(--w-gray);
+            font-family: var(--poppins);
+            line-height: 1rem;
+          }
+        }
+      }
+
+      .casts {
+        /* border: 1px solid white; */
+        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .cast-container {
+          flex: 0 auto;
+          /* border: 1px solid; */
+          position: relative;
+
+          .imgbox {
+            height: 10rem;
+            width: 10rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            /* border: 1px solid white; */
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .popularity {
+            /* border: 1px solid white; */
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(1rem);
+            border-radius: 100vw;
+            padding: 0.5rem;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            top: 0.5rem;
+            right: 0.5rem;
+
+            svg {
+              fill: var(--rating);
+            }
+            span {
+              color: var(--w-gray);
+              font-family: var(--poppins);
+            }
+          }
+
+          .cast-name {
+            /* border: 1px solid; */
+            text-align: center;
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+            font-family: var(--poppins);
+            color: var(--w-gray);
+          }
+        }
+      }
+    }
+  }
+}

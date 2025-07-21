@@ -118,4 +118,31 @@
       }
     }
   }
+
+  .removeFavourite {
+    background: var(--favourite);
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    svg {
+      fill: var(--white);
+      height: 1.5rem;
+    }
+  }
+
+  .viewMovie {
+    background: var(--views);
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    svg {
+      fill: var(--white);
+      height: 1.5rem;
+    }
+  }
 }

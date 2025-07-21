@@ -10,7 +10,7 @@ const CardContainer = ({ page, isFavourite, favouriteMovies }) => {
 
   if (isFavourite) {
     movies = favouriteMovies.map((movie) => (
-      <Card movie={movie} key={movie.id} />
+      <Card movie={movie} key={movie.docId} isFavourite={isFavourite} />
     ));
   }
 
