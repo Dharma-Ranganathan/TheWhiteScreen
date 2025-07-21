@@ -12,7 +12,7 @@
   justify-content: center;
 
   .modal-wrapper {
-    border: 0.2rem solid var(--w-gray);
+    /* border: 0.2rem solid var(--w-gray); */
     transition: 0.3s;
     overflow-y: scroll;
     height: 55rem;
@@ -84,6 +84,7 @@
 
       .title {
         /* border: 1px solid white; */
+        margin: 1rem 0;
         width: 100%;
 
         h3 {
@@ -97,6 +98,7 @@
 
       .creds {
         /* border: 1px solid white; */
+        margin: 1rem 0;
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -193,8 +195,8 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            top: 0.5rem;
-            right: 0.5rem;
+            bottom: 3.5rem;
+            left: 0.5rem;
 
             svg {
               fill: var(--rating);
@@ -215,6 +217,18 @@
           }
         }
       }
+    }
+  }
+
+  .closeModal {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    cursor: pointer;
+
+    svg {
+      fill: var(--w-gray);
+      font-size: 3rem;
     }
   }
 }

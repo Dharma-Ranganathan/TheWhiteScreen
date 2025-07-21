@@ -1,7 +1,12 @@
 import "../styles/CardContainer.css";
 import Card from "./Card";
 
-const CardContainer = ({ page, isFavourite, favouriteMovies }) => {
+const CardContainer = ({
+  page,
+  isFavourite,
+  favouriteMovies,
+  getMovieDetail,
+}) => {
   let movies = [];
 
   if (!isFavourite) {
@@ -10,7 +15,12 @@ const CardContainer = ({ page, isFavourite, favouriteMovies }) => {
 
   if (isFavourite) {
     movies = favouriteMovies.map((movie) => (
-      <Card movie={movie} key={movie.docId} isFavourite={isFavourite} />
+      <Card
+        movie={movie}
+        key={movie.docId}
+        isFavourite={isFavourite}
+        getMovieDetail={getMovieDetail}
+      />
     ));
   }
 

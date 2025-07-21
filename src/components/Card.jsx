@@ -11,7 +11,7 @@ import { deleteDoc, doc } from "firebase/firestore";
 import { fdb } from "../config/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 
-const Card = ({ movie, isFavourite }) => {
+const Card = ({ movie, isFavourite, getMovieDetail }) => {
   // console.log(movie.id);
 
   const [toggleHeart, setToggleHeart] = useState(false);
@@ -32,6 +32,11 @@ const Card = ({ movie, isFavourite }) => {
   async function removeFavourite(movieDocId) {
     await deleteDoc(doc(fdb, "favourites", movieDocId));
     return navigate("/");
+  }
+
+  function handleViewMovie(movie) {
+    // console.log("viewMovieClicked", movie);
+    getMovieDetail(movie);
   }
 
   return (
@@ -71,7 +76,10 @@ const Card = ({ movie, isFavourite }) => {
         <div className="favourite-icon">
           {isFavourite ? (
             <>
-              <button className="viewMovie">
+              <button
+                className="viewMovie"
+                onClick={() => handleViewMovie(movie)}
+              >
                 <MdLocalMovies />
               </button>
               <button

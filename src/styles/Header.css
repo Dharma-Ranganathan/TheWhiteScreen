@@ -81,27 +81,6 @@
           }
         }
       }
-      .search-icon {
-        /* border: 1px solid; */
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-
-        span {
-          display: block;
-          color: var(--b-gray);
-          font-size: 2rem;
-          line-height: 1rem;
-
-          @media screen and (width<=20rem) {
-            & {
-              font-size: 1.5rem;
-            }
-          }
-        }
-      }
     }
   }
 }

@@ -6,11 +6,15 @@ import PageTitle from "../components/PageTitle";
 import CardContainer from "../components/CardContainer";
 import Loader from "../components/Loader";
 import MovieModal from "../components/MovieModal";
+import useViewMovieDetail from "../hooks/useViewMovieDetail";
 
 const Favourites = () => {
   const [favouriteMovies, setFavouriteMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
   const { getAllFavourites } = useFirestoreCustomFunctions();
+  const { viewMovie, showModal, getMovieDetail, setShowModal, setViewMovie } =
+    useViewMovieDetail();
 
   async function handleSetFavouriteMovies() {
     try {
@@ -28,6 +32,8 @@ const Favourites = () => {
     handleSetFavouriteMovies();
   }, []);
 
+  // console.log(viewMovie, showModal);
+
   return (
     <div className="favourite-page">
       <PageTitle
@@ -40,9 +46,19 @@ const Favourites = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <CardContainer favouriteMovies={favouriteMovies} isFavourite={true} />
+        <CardContainer
+          favouriteMovies={favouriteMovies}
+          isFavourite={true}
+          getMovieDetail={getMovieDetail}
+        />
       )}
-      <MovieModal />
+      {showModal && (
+        <MovieModal
+          viewMovie={viewMovie ? viewMovie : {}}
+          setShowModal={setShowModal}
+          setViewMovie={setViewMovie}
+        />
+      )}
     </div>
   );
 };

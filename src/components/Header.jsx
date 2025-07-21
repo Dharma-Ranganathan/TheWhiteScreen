@@ -2,7 +2,6 @@ import "../styles/Header.css";
 import Logo from "./Logo";
 import SwitchMode from "./SwitchMode";
 import Favourites from "./Favourites";
-import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
@@ -13,7 +12,6 @@ const Header = () => {
         </div>
 
         <div className="icons-wrapper">
-          <SearchBar />
           <Favourites />
           <SwitchMode />
         </div>
