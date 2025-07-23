@@ -1,0 +1,202 @@
+.login-page {
+  /* border: 1px solid; */
+  width: 100%;
+  height: calc(100vh - 8rem);
+  background: url("/placeholderMoviePoster.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  .form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    /* background: red; */
+
+    .form-wrapper {
+      border: 0.1rem solid var(--w-gray);
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 2rem;
+      backdrop-filter: blur(2rem);
+      padding: 1rem;
+      max-width: 50rem;
+      margin: 3rem auto;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .welcome-back {
+        /* border: 1px solid; */
+        width: 100%;
+        font-size: 3rem;
+        letter-spacing: 0.2rem;
+        color: var(--w-gray);
+        font-family: var(--niconne);
+        text-transform: capitalize;
+
+        @media screen and (width<=20rem) {
+          & {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .title {
+        /* border: 1px solid; */
+        width: 100%;
+        font-size: 3rem;
+        color: var(--w-gray);
+        font-family: var(--poppins);
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+
+        @media screen and (width<=20rem) {
+          & {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .input-container {
+        /* border: 1px solid white; */
+        width: 100%;
+        margin: 2rem 0;
+        position: relative;
+
+        input {
+          width: 100%;
+          padding: 1rem 2rem;
+          font-size: 1.5rem;
+          font-family: var(--poppins);
+          background: rgba(0, 0, 0, 0.25);
+          outline: none;
+          border: 0.1rem solid var(--w-gray);
+          border-radius: 100vw;
+          color: var(--w-gray);
+          letter-spacing: 0.1rem;
+
+          &::placeholder {
+            color: var(--w-gray);
+          }
+        }
+
+        span {
+          position: absolute;
+          cursor: pointer;
+          top: 1.3rem;
+          right: 1.3rem;
+
+          svg {
+            fill: var(--w-gray);
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .or {
+        color: var(--w-gray);
+        font-size: 1.3rem;
+        font-family: var(--poppins);
+      }
+
+      .google-sign-up {
+        /* border: 1px solid; */
+        cursor: pointer;
+        width: 100%;
+        padding: 1rem;
+        margin: 1rem 0;
+        background: var(--w-gray);
+        border-radius: 1rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        img {
+          width: 2rem;
+          object-fit: cover;
+        }
+
+        span {
+          font-size: 1.3rem;
+          font-family: var(--poppins);
+          color: var(--b-gray);
+        }
+      }
+
+      .sign-in {
+        /* border: 1px solid white; */
+        width: 100%;
+        margin: 1rem 0;
+
+        button {
+          width: 100%;
+          cursor: pointer;
+          padding: 1rem;
+          border: none;
+          background: var(--w-gray);
+          color: var(--b-gray);
+          font-family: var(--poppins);
+          font-size: 1.5rem;
+          letter-spacing: 0.1rem;
+          border-radius: 100vw;
+
+          &:disabled {
+            cursor: not-allowed;
+            background: gray;
+          }
+        }
+      }
+
+      .error-message {
+        border-left: 0.2rem solid var(--favourite);
+        border-right: 0.2rem solid var(--favourite);
+        width: 100%;
+        padding: 0.5rem;
+        background: rgba(255, 0, 0, 0.25);
+        text-align: center;
+
+        p {
+          font-size: 1.3rem;
+          font-family: var(--poppins);
+          color: var(--w-gray);
+        }
+      }
+
+      .no-account {
+        /* border: 1px solid; */
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        p {
+          font-size: 1.3rem;
+          text-transform: capitalize;
+          font-family: var(--poppins);
+          letter-spacing: 0.1rem;
+          color: var(--w-gray);
+        }
+
+        .sign-up {
+          color: var(--views);
+          cursor: pointer;
+          font-size: 1.3rem;
+          font-family: var(--poppins);
+          border-radius: 100vw;
+          border: 0.1rem solid var(--w-gray);
+          padding: 0.5rem 1rem;
+          background: var(--white);
+        }
+      }
+    }
+  }
+}

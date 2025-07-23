@@ -1,21 +1,24 @@
-import "../styles/Login.css";
+import "../styles/SignUp.css";
 import { MdEmail } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useFirebaseAuth from "../hooks/useFirebaseAuth";
+import Loader from "../components/Loader";
 
-export default function Login() {
+export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
   const [creds, setCreds] = useState({
     email: "",
     password: "",
   });
 
+  const navigate = useNavigate();
+
   // updating document title
   useEffect(() => {
-    document.title = "Login | The White Screen";
+    document.title = "Sign Up | The White Screen";
   }, []);
 
   useEffect(() => {
@@ -28,10 +31,8 @@ export default function Login() {
     }
   }, [showPassword]);
 
-  const navigate = useNavigate();
-
   //hooks
-  const { signInFirebase, error, isLoading, signUpWithGoogle } =
+  const { signUpFirebase, error, isLoading, signUpWithGoogle } =
     useFirebaseAuth();
 
   function handleCreds(e) {
@@ -39,21 +40,25 @@ export default function Login() {
   }
   // console.log(creds);
 
-  function handleSignIn(e) {
-    if (creds.email.trim() == "" || creds.password.trim() == "") {
-      return console.log("empty creds");
-    }
+  function handleSignUp() {
+    signUpFirebase(creds.email, creds.password);
+    setCreds({
+      email: "",
+      password: "",
+    });
+    return navigate("/");
+  }
 
-    // console.log(creds);
-    signInFirebase(creds.email, creds.password);
+  function handleGoogleSignUp() {
+    signUpWithGoogle();
     return navigate("/");
   }
 
   return (
-    <div className="login-page">
+    <div className="signup-page">
       <div className="form-container">
         <div className="form-wrapper">
-          <p className="welcome-back">Welcome Back to</p>
+          <p className="welcome-back">Welcome to</p>
           <h3 className="title">The White Screen</h3>
           <div className="input-container">
             <span>
@@ -88,25 +93,25 @@ export default function Login() {
             />
           </div>
           <p className="or">(or)</p>
-          <div className="google-sign-up" onClick={signUpWithGoogle}>
+          <div className="google-sign-up" onClick={handleGoogleSignUp}>
             <img src="/google-logo.png" alt="google" />
             <span>Sign Up with Google</span>
           </div>
-          <div className="sign-in">
-            <button onClick={handleSignIn} disabled={isLoading}>
-              Login
+          <div className="sign-up">
+            <button onClick={handleSignUp} disabled={isLoading}>
+              Register
             </button>
           </div>
           {error && (
             <div className="error-message">
-              <p>Error Message: Invalid User Credentails</p>
+              <p>{error}</p>
             </div>
           )}
 
           <div className="no-account">
-            <p>don't have an account?</p>
-            <Link className="sign-up" to={"/sign-up"}>
-              Sign Up
+            <p>Already have an account?</p>
+            <Link className="sign-in" to={"/login"}>
+              Sign In
             </Link>
           </div>
         </div>

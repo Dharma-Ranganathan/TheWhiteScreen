@@ -60,6 +60,27 @@
         }
       }
 
+      .logout {
+        /* border: 1px solid; */
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        justify-content: center;
+
+        span {
+          display: block;
+          font-size: 2.5rem;
+          color: var(--b-gray);
+          line-height: 1rem;
+
+          @media screen and (width<=20rem) {
+            & {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
       .favourites {
         /* border: 1px solid; */
         cursor: pointer;

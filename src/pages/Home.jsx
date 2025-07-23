@@ -4,9 +4,15 @@ import { useMoviesFromApi } from "../hooks/useMoviesFromServer";
 import PageTitle from "../components/PageTitle";
 import InfiniteButton from "../components/InfiniteButton";
 import Loader from "../components/Loader";
+import { useEffect } from "react";
 
 const Home = () => {
   const { data, isLoading } = useMoviesFromApi();
+
+  useEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+    document.title = "Home | The White Screen";
+  }, []);
 
   const pages = data?.pages?.map((page, index) => {
     return <CardContainer key={index} page={page} isFavourite={false} />;

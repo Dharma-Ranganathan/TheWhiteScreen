@@ -15,11 +15,10 @@ export const useFirestoreCustomFunctions = () => {
       moviesDoc.forEach((doc) => {
         favouriteMovies.push({ docId: doc.id, ...doc.data() });
       });
+      return favouriteMovies;
     } catch (error) {
       console.log(error);
     }
-
-    return favouriteMovies;
   }
 
   // Add Movie to Favourite Page

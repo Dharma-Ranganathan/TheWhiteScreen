@@ -10,17 +10,22 @@ import { useFirestoreCustomFunctions } from "../hooks/useFirestoreCustomFunction
 import { deleteDoc, doc } from "firebase/firestore";
 import { fdb } from "../config/firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import useFirebaseAuth from "../hooks/useFirebaseAuth";
 
 const Card = ({ movie, isFavourite, getMovieDetail }) => {
   // console.log(movie.id);
 
   const [toggleHeart, setToggleHeart] = useState(false);
-
-  const { addToFavourite } = useFirestoreCustomFunctions();
-
   const navigate = useNavigate();
 
+  const { addToFavourite } = useFirestoreCustomFunctions();
+  const { user } = useFirebaseAuth();
+
   function handleFavourite(movieId) {
+    if (!user.isLoggedIn) {
+      return navigate("/login");
+    }
+
     if (movie.id == movieId) {
       setToggleHeart(true);
       //firestore logic to add favourite movie

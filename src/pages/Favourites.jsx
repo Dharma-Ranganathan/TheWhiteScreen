@@ -29,6 +29,8 @@ const Favourites = () => {
   }
 
   useEffect(() => {
+    document.title = "Favourites | The White Screen";
+
     handleSetFavouriteMovies();
   }, []);
 
