@@ -1,12 +1,26 @@
-# React + Vite
+# Hello Guys, Welcome back to my another project 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+* Project Name : The White Screen
+* Project name could be little different to hear, Here's Why? ==> Inspired and used from Real Movie Theatre where they use White Screen to project movie using projector.
 
-Currently, two official plugins are available:
+# So, what are the skills that i learned making this application.
+* ReactJs (Implemented Context Api for global maintenance).
+* React TanstackQuery (Infinite movie scrolling).
+* Firebase Authentication and Cloud FireStore Database.
+* Axios Library for fetching datas through Api seemlessly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Credits : Json Fakery Api Services.
+I would really gratefull to Json Fakery Api Services, Without their api services I can't achieve making this applications using infinite scroll options from tanstack/query.
 
-## Expanding the ESLint configuration
+# So, What's in this application ?
+* Users can scroll upto infinite movie poster and they can add this movie poster to add-favourites page.
+* Users can do crud in add-favourites page.
+* Utilized RealTime Database (FireStore) for storing favourite movie posters.
+* Utilized Tanstack/Query and Axios Library for fetching datas from Api.
+* Authenticated using Firebase Authentication (email/password and google auth provider).
+* Protected Routes using React Router Dom.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Thanks for being patience, Click the Link below to visit project
+Project Link : 
+
+  
