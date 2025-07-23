@@ -20,7 +20,10 @@ I would really gratefull to Json Fakery Api Services, Without their api services
 * Authenticated using Firebase Authentication (email/password and google auth provider).
 * Protected Routes using React Router Dom.
 
+# Note:
+You cannot view movie poster in home page, cause this api service did not provide that option to view particular movie in a page, so I resolved it by adding this movie poster to favourites page where you can able to view it properly. Got it guys?
+
 # Thanks for being patience, Click the Link below to visit project
-Project Link : 
+Project Link : https://thewhitescreen-2ac59.web.app
 
   
