@@ -3,6 +3,7 @@
 
   /* 100 % height */
   height: calc(100vh - 5rem);
+  background: var(--white);
 
   overflow-y: scroll;
   width: 100%;

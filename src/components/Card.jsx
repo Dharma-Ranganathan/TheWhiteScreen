@@ -5,12 +5,12 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import { FaTrash } from "react-icons/fa";
 import { MdLocalMovies } from "react-icons/md";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useFirestoreCustomFunctions } from "../hooks/useFirestoreCustomFunctions";
 import { deleteDoc, doc } from "firebase/firestore";
 import { fdb } from "../config/firebaseConfig";
 import { useNavigate } from "react-router-dom";
-import useFirebaseAuth from "../hooks/useFirebaseAuth";
+import { AuthContext } from "../context/AuthContext";
 
 const Card = ({ movie, isFavourite, getMovieDetail }) => {
   // console.log(movie.id);
@@ -19,10 +19,11 @@ const Card = ({ movie, isFavourite, getMovieDetail }) => {
   const navigate = useNavigate();
 
   const { addToFavourite } = useFirestoreCustomFunctions();
-  const { user } = useFirebaseAuth();
+
+  const { isLoggedIn } = useContext(AuthContext);
 
   function handleFavourite(movieId) {
-    if (!user.isLoggedIn) {
+    if (!isLoggedIn) {
       return navigate("/login");
     }
 

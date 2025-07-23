@@ -1,4 +1,7 @@
 .favourite-page {
   /* border: 1px solid; */
+  background: var(--white);
+  /* background: red; */
+  min-height: calc(100vh - 9rem);
   position: relative;
 }

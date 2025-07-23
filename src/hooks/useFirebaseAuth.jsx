@@ -4,17 +4,20 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
-  onAuthStateChanged,
 } from "firebase/auth";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { fauth } from "../config/firebaseConfig";
+import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function useFirebaseAuth() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // sign in with google provider
-  const provider = new GoogleAuthProvider();
+  //navigate
+  const navigate = useNavigate();
+  // auth context
+  const { dispatch } = useContext(AuthContext);
 
   async function signUpFirebase(email, password) {
     // console.log(email, password);
@@ -23,11 +26,17 @@ export default function useFirebaseAuth() {
 
     await createUserWithEmailAndPassword(fauth, email, password)
       .then((userCredential) => {
-        setError(null);
-        setIsLoading(false);
+        const user = userCredential.user;
+        if (user) {
+          dispatch({ type: "LOGIN", payload: user });
+          setIsLoading(false);
+          navigate("/");
+        }
       })
       .catch((error) => {
         console.log(error.message);
+        dispatch({ type: "LOGIN", payload: null });
+
         setError(error.message);
         setIsLoading(false);
       });
@@ -39,24 +48,40 @@ export default function useFirebaseAuth() {
     setIsLoading(true);
     await signInWithEmailAndPassword(fauth, email, password)
       .then((userCredential) => {
-        setIsLoading(false);
+        const user = userCredential.user;
+        if (user) {
+          dispatch({ type: "LOGIN", payload: user });
+          setIsLoading(false);
+          navigate("/");
+        }
       })
       .catch((error) => {
         console.log(error.message);
+        dispatch({ type: "LOGIN", payload: null });
+
         setError(error.message);
         setIsLoading(false);
       });
   }
 
+  // sign in with google provider
+  const provider = new GoogleAuthProvider();
   async function signUpWithGoogle() {
     setError(null);
     setIsLoading(true);
     await signInWithPopup(fauth, provider)
       .then((result) => {
-        setIsLoading(false);
+        const user = result.user;
+        if (user) {
+          dispatch({ type: "LOGIN", payload: user });
+          setIsLoading(false);
+          navigate("/");
+        }
       })
       .catch((error) => {
         console.log(error.message);
+        dispatch({ type: "LOGIN", payload: null });
+
         setIsLoading(false);
         setError(error.message);
       });
@@ -69,6 +94,8 @@ export default function useFirebaseAuth() {
     await signOut(fauth)
       .then(() => {
         console.log("signed out success");
+        dispatch({ type: "LOGOUT" });
+
         setIsLoading(false);
       })
       .catch((error) => {

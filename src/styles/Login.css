@@ -19,7 +19,7 @@
 
     .form-wrapper {
       border: 0.1rem solid var(--w-gray);
-      background: rgba(0, 0, 0, 0.25);
+      background: var(--transparent);
       border-radius: 2rem;
       backdrop-filter: blur(2rem);
       padding: 1rem;
@@ -73,7 +73,7 @@
           padding: 1rem 2rem;
           font-size: 1.5rem;
           font-family: var(--poppins);
-          background: rgba(0, 0, 0, 0.25);
+          background: var(--transparent);
           outline: none;
           border: 0.1rem solid var(--w-gray);
           border-radius: 100vw;
@@ -187,7 +187,7 @@
         }
 
         .sign-up {
-          color: var(--views);
+          color: var(--b-gray);
           cursor: pointer;
           font-size: 1.3rem;
           font-family: var(--poppins);

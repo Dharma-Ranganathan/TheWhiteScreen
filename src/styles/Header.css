@@ -2,6 +2,7 @@
   /* border: 1px solid; */
   width: 100%;
   border-bottom: 0.2rem solid var(--w-gray);
+  background: var(--white);
 
   .header-wrapper {
     /* border: 1px solid; */

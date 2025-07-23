@@ -71,7 +71,7 @@ const MovieModal = ({ viewMovie, setShowModal, setViewMovie }) => {
                   </p>
                   <div className="popularity">
                     <FaStar />
-                    <span>{cast.popularity.substring(0, 5)}</span>
+                    <span>{cast.popularity.substring(0, 3)}</span>
                   </div>
                 </div>
               );

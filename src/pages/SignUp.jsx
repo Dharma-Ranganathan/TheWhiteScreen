@@ -2,10 +2,9 @@ import "../styles/SignUp.css";
 import { MdEmail } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useFirebaseAuth from "../hooks/useFirebaseAuth";
-import Loader from "../components/Loader";
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,8 +12,6 @@ export default function SignUp() {
     email: "",
     password: "",
   });
-
-  const navigate = useNavigate();
 
   // updating document title
   useEffect(() => {
@@ -46,12 +43,12 @@ export default function SignUp() {
       email: "",
       password: "",
     });
-    return navigate("/");
+    return;
   }
 
   function handleGoogleSignUp() {
     signUpWithGoogle();
-    return navigate("/");
+    return;
   }
 
   return (

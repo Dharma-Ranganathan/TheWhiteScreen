@@ -2,7 +2,7 @@ import "../styles/Login.css";
 import { MdEmail } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useFirebaseAuth from "../hooks/useFirebaseAuth";
 
@@ -28,8 +28,6 @@ export default function Login() {
     }
   }, [showPassword]);
 
-  const navigate = useNavigate();
-
   //hooks
   const { signInFirebase, error, isLoading, signUpWithGoogle } =
     useFirebaseAuth();
@@ -46,7 +44,7 @@ export default function Login() {
 
     // console.log(creds);
     signInFirebase(creds.email, creds.password);
-    return navigate("/");
+    return;
   }
 
   return (
@@ -90,7 +88,7 @@ export default function Login() {
           <p className="or">(or)</p>
           <div className="google-sign-up" onClick={signUpWithGoogle}>
             <img src="/google-logo.png" alt="google" />
-            <span>Sign Up with Google</span>
+            <span>Sign In with Google</span>
           </div>
           <div className="sign-in">
             <button onClick={handleSignIn} disabled={isLoading}>

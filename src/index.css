@@ -11,6 +11,10 @@ html {
   scroll-behavior: smooth;
 }
 
+#root {
+  background: #fff;
+}
+
 :root {
   /* colors and bg-colors  */
 
@@ -22,6 +26,7 @@ html {
   --views: #00f;
   --release: green;
   --favourite: #f00;
+  --transparent: rgba(0, 0, 0, 0.5);
 
   /* font family  */
 
@@ -32,4 +37,18 @@ html {
 
 *::-webkit-scrollbar {
   display: none;
+}
+
+.dark-theme {
+  /* colors and bg-colors for dark-theme */
+
+  --w-gray: #444;
+  --white: #000;
+  --b-gray: #f3f3f3;
+  --black: #fff;
+  --rating: gold;
+  --views: #00f;
+  --release: green;
+  --favourite: #f00;
+  --transparent: rgba(255, 255, 255, 0.5);
 }

@@ -1,9 +1,9 @@
 .footer {
-  /* border: 1px solid; */
-  max-width: 100rem;
-  margin: 0 auto;
+  border-top: 0.2rem solid var(--w-gray);
+  width: 100%;
   text-align: center;
   padding: 1rem;
+  background: var(--white);
 
   .footer-text {
     font-size: 1.3rem;
